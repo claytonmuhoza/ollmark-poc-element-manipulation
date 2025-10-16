@@ -16,6 +16,11 @@ penpot.on('selectionchange', () => {
   })
 })
 penpot.ui.onMessage((msg: OutMsg) => {
+  if(msg.type === 'DELETE_SELECTED_ELEMENTS'){
+    penpot.selection.forEach(element=>
+    element.remove());
+    console.log("Deleted selection");
+  }
   //logique pour la modification
   if(msg.type === 'EDIT_SELECTED_TEXT')
   {

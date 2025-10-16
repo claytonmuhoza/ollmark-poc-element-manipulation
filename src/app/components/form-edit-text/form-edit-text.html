@@ -1,16 +1,20 @@
-<app-section-container title="Modifier un texte" [formGroup]="editForm">
-  <input class="input" type="text" placeholder="Entrer votre texte" formControlName="text" />
+<app-section-container title="Modifier la couleur" [formGroup]="editForm">
   <select class="select" formControlName="color">
     @for (color of this.colorOptions; track color){
       <option ngValue="color">{{color}}</option>
     }
   </select>
+  <button (click)="setColor()">
+    <img width="16" height="16" ngSrc="https://img.icons8.com/FFFFFF/sf-regular/48/paint-palette.png" alt="palette" class="primary" data-appearance="primary"/>
+    <p>Set color</p>
+  </button>
+</app-section-container>
+
+
+<app-section-container title="Modifier un texte" [formGroup]="editForm">
+  <input class="input" type="text" placeholder="Entrer votre texte" formControlName="text" />
   <button (click)="editSelected()" [disabled]="editForm.controls.text.invalid" class="primary" data-appearance="primary">
     <img width="16" height="16" ngSrc="https://img.icons8.com/FFFFFF/sf-regular/48/create-new.png" alt="create-new" />
     <p>Edit</p>
-  </button>
-  <button (click)="setColor()">
-    <img width="16" height="16" ngSrc="https://img.icons8.com/FFFFFF/sf-regular/48/paint-palette.png" alt="palette" />
-    <p>Set color</p>
   </button>
 </app-section-container>

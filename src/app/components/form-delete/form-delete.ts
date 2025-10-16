@@ -19,17 +19,13 @@ export class FormDelete {
   private bus = inject(PenpotMessagingService)
   private destroyRef = inject(DestroyRef)
   readonly deleteForm = this.fb.group({
-    tag: this.fb.control<string>('', [
-      Validators.required,
-      Validators.pattern(/\S/)
-    ])
+
   })
-  deleteOne() {
+  deleteAll() {
     if (this.deleteForm.invalid) {
       this.deleteForm.markAllAsTouched()
       return
     }
-    const tag = this.deleteForm.value.tag!.trim()
-    this.bus.send({ type: 'DELETE_BY_TAG', tag })
+    this.bus.send({ type: 'DELETE_SELECTED_ELEMENTS'})
   }
 }
