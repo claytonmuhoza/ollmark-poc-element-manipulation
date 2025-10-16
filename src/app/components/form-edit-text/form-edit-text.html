@@ -1,0 +1,16 @@
+<app-section-container [title]="'Item modification'" [formGroup]="editForm">
+  <input class="input" type="text" placeholder="Tag / New text" formControlName="text" />
+  <select class="select" formControlName="color">
+    @for (color of this.colorOptions; track color){
+      <option ngValue="color">{{color}}</option>
+    }
+  </select>
+  <button (click)="editSelected()" [disabled]="editForm.controls.text.invalid">
+    <img width="16" height="16" ngSrc="https://img.icons8.com/FFFFFF/sf-regular/48/create-new.png" alt="create-new" />
+    <p>Edit</p>
+  </button>
+  <button (click)="setColor()">
+    <img width="16" height="16" ngSrc="https://img.icons8.com/FFFFFF/sf-regular/48/paint-palette.png" alt="palette" />
+    <p>Set color</p>
+  </button>
+</app-section-container>

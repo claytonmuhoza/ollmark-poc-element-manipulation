@@ -4,7 +4,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "typeRoots": ["./node_modules/@types", "./node_modules/@penpot"],
+    "types": ["plugin-types"]
   },
   "include": [
     "src/**/*.ts"

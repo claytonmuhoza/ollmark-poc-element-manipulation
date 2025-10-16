@@ -1,0 +1,11 @@
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.input ,.select {
+  flex-grow: 1;
+}

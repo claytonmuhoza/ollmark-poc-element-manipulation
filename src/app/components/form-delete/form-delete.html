@@ -1,0 +1,11 @@
+<app-section-container [title]="'Item deletion'" [formGroup]="deleteForm">
+  <input class="input" type="text" placeholder="Tag" formControlName="tag" />
+  <button data-appearance="primary" data-variant="destructive" (click)="deleteOne()" [disabled]="deleteForm.invalid">
+    <img width="16" height="16" ngSrc="https://img.icons8.com/sf-regular/48/delete.png" alt="delete" />
+    <p>Delete</p>
+  </button>
+  <button data-appearance="primary" data-variant="destructive">
+    <img width="16" height="16" ngSrc="https://img.icons8.com/sf-regular/48/delete.png" alt="delete" />
+    <p>Delete all</p>
+  </button>
+</app-section-container>
