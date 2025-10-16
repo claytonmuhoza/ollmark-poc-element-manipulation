@@ -16,6 +16,20 @@ penpot.on('selectionchange', () => {
   })
 })
 penpot.ui.onMessage((msg: OutMsg) => {
+  //logique pour la modification
+  if(msg.type === 'EDIT_SELECTED_TEXT')
+  {
+    // on recuperer le permier texte selectionner dans penpot
+    const first = penpot.selection.find(n => n.type === 'text')
+    /*
+    //on vérifie s'il y a au moin un text qui est séléctionner
+    if(first){
+      first.characters = msg.text
+    }
+    else {
+      alert("il n'y a pas de texte séléctionner")
+    }*/
+  }
   if (msg.type === 'CREATE_TEXT') {
 
     let textNode = penpot.createText(msg.text);

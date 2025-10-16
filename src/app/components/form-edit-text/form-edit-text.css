@@ -3,7 +3,7 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 1rem;
 }
 
 .input ,.select {
