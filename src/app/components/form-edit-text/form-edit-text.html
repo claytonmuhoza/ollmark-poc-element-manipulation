@@ -1,7 +1,7 @@
 <app-section-container title="Modifier la couleur" [formGroup]="editForm">
   <select class="select" formControlName="color">
     @for (color of this.colorOptions; track color){
-      <option ngValue="color">{{color}}</option>
+      <option [value]="color">{{color}}</option>
     }
   </select>
   <button (click)="setColor()">
@@ -9,7 +9,6 @@
     <p>Set color</p>
   </button>
 </app-section-container>
-
 
 <app-section-container title="Modifier un texte" [formGroup]="editForm">
   <input class="input" type="text" placeholder="Entrer votre texte" formControlName="text" />
