@@ -54,6 +54,12 @@ export class PenpotMessagingService {
 
   /** Émettre un message vers Penpot (le parent de l’iframe) */
   send(msg: OutMsg) {
-    parent.postMessage(msg, '*') // ⇐ remplacez '*' par l’origin exacte si connue
+    const targetOrigin = '*'; // Remplacez par l’origine exacte
+    try {
+     // console.log("Sending message to parent:", msg);
+      parent.postMessage(msg, targetOrigin);
+    } catch (error) {
+     // console.error("Failed to send message:", error);
+    }
   }
 }

@@ -42,12 +42,17 @@ export class FormEditText {
       return
     }
     const text = this.editForm.value.text!.trim()
+    console.log("message send :", text);
     this.bus.send({ type: 'EDIT_SELECTED_TEXT', text })
   }
 
   setColor() {
-    const name = this.editForm.value.color ?? 'White'
-    const hex = this.colorMap[name]
+    const selectedColor = this.editForm.value.color ?? 'White';
+    //console.log('Selected color from form:', selectedColor);
+    //console.log('Form value:', this.editForm.value);
+    const hex = this.colorMap[selectedColor];
+    //console.log('Hex color:', hex);
+
     this.bus.send({ type: 'SET_SELECTED_TEXT_COLOR', color: hex })
   }
 
